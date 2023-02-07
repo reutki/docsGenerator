@@ -4,11 +4,12 @@ import { Box, Typography, TextField, Button, Step, Stepper, StepLabel } from '@m
 import { InputField } from './components/InputField';
 import { useForm } from 'react-hook-form'
 import { Checks } from './components/Form'
+import { DefiningQualityStandards } from './components/files/definingQualityStandards';
 
 
 
 function App() {
-  const { register, handleSubmit, control } = useForm()
+  const { handleSubmit } = useForm()
   const [count, setCount] = useState(1);
   const [standard, setStandard] = useState([])
   const [rows, setRows] = useState([]);
@@ -39,6 +40,7 @@ function App() {
   }
   return (
     <div className="App">
+
       <Stepper activeStep={step}>
         <Step><StepLabel>Write standard name</StepLabel>
         </Step>
@@ -60,10 +62,9 @@ function App() {
           </Step>
         </Stepper>
       ) : null}
-
-
     </div >
   );
 }
+
 
 export default App
